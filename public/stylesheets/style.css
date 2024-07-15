@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  color: black;
+  padding-top: 20px;
+  font-family: Lato, sans-serif;
+  font-size: 1em;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form */
+
+.input-post-content {
+  width: 85%;
+  padding: 2em;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-post {
+  padding: 10px;
+  width: 75%;
+  max-width: 500px;
+  height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1em;
+}
+
+.input-post:hover {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.button-submit {
+  width: 5em;
+  height: 3em;
+  margin: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+}
+
+/* Post */
+
+.container-content{
+  margin: 35px;
+  width: 80%;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-content {
+  width: 75%;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.button-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-change {
+  margin: 7px;
+  width: 4.3em;
+  height: 2.5em;
+  border-radius: 5px;
+  border-color: #ffffff;
+  color: white;
+}
+
+
+
+
+

@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+  <form action="/submit" method="POST" class="input-post-content">
+    <textarea name="post-text" class="input-post" placeholder="Write a creative post..."></textarea>
+    <button class="button-submit">Post</button>
+    
+  </form>
+  <% items.forEach(item => { %>    
+      <div class="container-content" id="item-<%=item.id%>">
+        <div class="post-content">
+          <p><%= item.text %></p>
+        </div>
+        <div class="button-content">
+          <form action="/delete/<%= item.id %>" method="POST" style="display: inline;">
+            <button class="button-change" style="background-color: crimson;">Delete</button>
+          </form>
+          <form action="/update/<%= item.id %>" method="POST" style="display: inline;">
+            <button  class="button-change" style="background-color:seagreen;">Edit</button>
+          </form>
+        </div>
+      </div>    
+  <% }); %>
+
+<%- include("partials/header.ejs") %>
