@@ -6,14 +6,14 @@
 
 html,
 body {
-  background-color: #ffffff;
+  background-color: #f1efeef1;
   color: black;
-  padding-top: 20px;
   font-family: Lato, sans-serif;
   font-size: 1em;
 }
 
 main {
+  padding-top: 20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -21,23 +21,61 @@ main {
   justify-content: center;
 }
 
-/* Form */
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  height: 50px;
+}
 
-.input-post-content {
-  width: 85%;
-  padding: 2em;
-  margin-bottom: 30px;
+.header-element {
+  padding: 8px;
+  margin: 0 10px 0 10px;
+}
+
+/* Content Form */
+.content-form {
+  margin-top: 18px;
+  width: 90%;
+  height: 540px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-subtitles {
+  width: 40%;
+  /*padding: 0 10px 0 55px;*/
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+/* Form */
+
+.input-post-content {
+  width: 50%;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
   justify-content: center;
 }
+.content-title { 
+  padding-bottom: 1.3em;
+  display: grid;
+
+} 
 
 .input-post {
   padding: 10px;
-  width: 75%;
-  max-width: 500px;
   height: 200px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-size: 1em;
 }
@@ -47,29 +85,76 @@ main {
 }
 
 .button-submit {
-  width: 5em;
+  justify-self: end;
+  width: 7em;
   height: 3em;
   margin: 10px;
-  border-radius: 5px;
+  border-radius: 50px;
   color: white;
   background-color: black;
 }
 
+/* Recent */
+
+.text-recent {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px 20px;
+}
+
+.line-recent {
+  margin: 15px;
+  border: groove;
+  width: 10%;
+  height: 2px;
+
+}
+
 /* Post */
+
+.content-post {
+  /*background-color: #a8a9b342;
+  border-radius: 30px;*/
+   display: flex;
+   flex-wrap: wrap;
+   width: 90%;
+   justify-content: center;
+}
 
 .container-content{
   margin: 35px;
-  width: 80%;
-  min-height: 200px;
+  width: 40%;
+  min-height: 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .post-content {
-  width: 75%;
-  padding: 20px;
+  background-color: #ffffff;
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.title-post {
+  padding: 12px;
+  /*background-color: #000000cf;*/
+  color: black;
+  font-family: "Lora";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.text-post {
+  padding: 12px;
+  color: #3f4444eb;
 }
 
 .button-content {
@@ -77,15 +162,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .button-change {
+  position: absolute;
+  left: -15px;
   margin: 7px;
-  width: 4.3em;
+  width: 2.5em;
   height: 2.5em;
   border-radius: 5px;
   border-color: #ffffff;
-  color: white;
+  color: black;
 }
 
 

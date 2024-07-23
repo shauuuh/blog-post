@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<form action="/update/<%=id_item%>" method="POST" class="input-post-content">
+  <div class="content-title">
+    <label for="">Title</label>
+    <input type="text" placeholder="<%=title%>" name="title-post">
+  </div>
+  <textarea name="post-text" class="input-post" placeholder=""><%= text  %></textarea>
+  <button class="button-submit">Update</button>
+</form>
+
+<%- include("partials/header.ejs") %>

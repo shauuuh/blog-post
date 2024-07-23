@@ -1,23 +1,39 @@
 <%- include("partials/header.ejs") %>
-  <form action="/submit" method="POST" class="input-post-content">
-    <textarea name="post-text" class="input-post" placeholder="Write a creative post..."></textarea>
-    <button class="button-submit">Post</button>
-    
-  </form>
-  <% items.forEach(item => { %>    
+  <div class="content-form">
+    <div class="content-subtitles">
+      <h1 style="padding: 0 40px; font-weight: 800;">Share your first post ...</h1>  
+      <h3 style="width: 60%; margin-left: 30%; padding: 10px;"><i class="fa-solid fa-arrow-right"></i></h3>
+    </div>
+    <form action="/submit" method="POST" class="input-post-content">  
+      <div class="content-title">
+        <input type="text" placeholder="Title" name="title-post" style="padding-left: 8px; border-radius: 8px;">
+      </div>
+      <textarea name="post-text" class="input-post" placeholder="Write a creative post..."></textarea>
+      <button class="button-submit">Post</button> 
+    </form>
+  </div>
+  <div class="text-recent">
+    <div class="line-recent"></div>
+    <h6 style="color: #00000094;">Recent Posts</h6>
+    <div class="line-recent"></div>
+  </div>
+  <div class="content-post">
+    <% items.forEach(item => { %>    
       <div class="container-content" id="item-<%=item.id%>">
         <div class="post-content">
-          <p><%= item.text %></p>
+          <h3 class="title-post"><%=item.title %></h3>
+          <p class="text-post"><%= item.text %></p>
         </div>
         <div class="button-content">
-          <form action="/delete/<%= item.id %>" method="POST" style="display: inline;">
-            <button class="button-change" style="background-color: crimson;">Delete</button>
-          </form>
-          <form action="/update/<%= item.id %>" method="POST" style="display: inline;">
-            <button  class="button-change" style="background-color:seagreen;">Edit</button>
-          </form>
+          <!--<form action="/delete/<%= item.id %>" method="POST"><-->
+          <button onclick="deletePost(`<%= item.id %>`)" class="button-change" style="top: 5px;"><i class="fa-solid fa-trash"></i></button>
+          <!--</form>-->
+          <form action="/edit/<%= item.id %>" method="POST">
+            <button class="button-change" style="top:45px;"><i class="fa-solid fa-pen"></i></button>
+          </form> 
         </div>
       </div>    
-  <% }); %>
-
-<%- include("partials/header.ejs") %>
+    <% }); %>
+  </div>
+  
+<%- include("partials/footer.ejs") %>
