@@ -38,8 +38,8 @@ header {
 /* Content Form */
 .content-form {
   margin-top: 18px;
-  width: 90%;
-  height: 540px;
+  width: 85%;
+  height: 570px;
   border-radius: 15px;
   background-color: #ffffff;
   display: flex;
@@ -49,20 +49,22 @@ header {
 }
 
 .content-subtitles {
-  width: 40%;
-  /*padding: 0 10px 0 55px;*/
+  width: 500px;
+  padding: 40px 40px 0 40px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Form */
 
 .input-post-content {
-  width: 50%;
+  width: 70%;
   padding: 2em;
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 80%;
   align-items: center;
   justify-content: center;
 }
@@ -116,17 +118,13 @@ header {
 /* Post */
 
 .content-post {
-  /*background-color: #a8a9b342;
-  border-radius: 30px;*/
-   display: flex;
-   flex-wrap: wrap;
-   width: 90%;
-   justify-content: center;
+  width: 85%;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .container-content{
   margin: 35px;
-  width: 40%;
   min-height: 300px;
   display: flex;
   flex-wrap: wrap;

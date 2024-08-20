@@ -1,8 +1,8 @@
 <%- include("partials/header.ejs") %>
   <div class="content-form">
     <div class="content-subtitles">
-      <h1 style="padding: 0 40px; font-weight: 800;">Share your first post ...</h1>  
-      <h3 style="width: 60%; margin-left: 30%; padding: 10px;"><i class="fa-solid fa-arrow-right"></i></h3>
+      <h1 style="font-weight: 800;">Share your first post ...</h1>  
+      <h3><i class="fa-solid fa-arrow-down"></i></h3>
     </div>
     <form action="/submit" method="POST" class="input-post-content">  
       <div class="content-title">
@@ -20,6 +20,7 @@
   <div class="content-post">
     <% items.forEach(item => { %>    
       <div class="container-content" id="item-<%=item.id%>">
+        <img src="<%=item.image%>">
         <div class="post-content">
           <h3 class="title-post"><%=item.title %></h3>
           <p class="text-post"><%= item.text %></p>
