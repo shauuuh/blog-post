@@ -120,7 +120,8 @@ header {
 .content-post {
   width: 85%;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 35% 35% 35%;
+  justify-content: center;
 }
 
 .container-content{
@@ -130,7 +131,9 @@ header {
   flex-wrap: wrap;
   justify-content: center;
 }
-
+/* Both of the following are required for text-overflow */
+/*white-space: nowrap;
+overflow: hidden;*/
 .post-content {
   background-color: #ffffff;
   width: 80%;

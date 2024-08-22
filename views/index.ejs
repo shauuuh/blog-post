@@ -20,10 +20,11 @@
   <div class="content-post">
     <% items.forEach(item => { %>    
       <div class="container-content" id="item-<%=item.id%>">
-        <img src="<%=item.image%>">
+        
         <div class="post-content">
+          <img src="<%=item.url_image%>" style="width: 100%; height: 130px; border-radius: 10px 10px 3px 3px;">
           <h3 class="title-post"><%=item.title %></h3>
-          <p class="text-post"><%= item.text %></p>
+          <p class="text-post"><%= item.txt_content %></p>
         </div>
         <div class="button-content">
           <!--<form action="/delete/<%= item.id %>" method="POST"><-->
