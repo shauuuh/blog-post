@@ -17,13 +17,13 @@
     <h6 style="color: #00000094;">Recent Posts</h6>
     <div class="line-recent"></div>
   </div>
-  <div class="content-post">
+  <div class="posts-content">
     <% items.forEach(item => { %>    
       <div class="container-content" id="item-<%=item.id%>">
-        
-        <div class="post-content">
+        <div class="blog-content">
           <img src="<%=item.url_image%>" style="width: 100%; height: 130px; border-radius: 10px 10px 3px 3px;">
-          <h3 class="title-post"><%=item.title %></h3>
+          <p style="margin: 10px 7px 0; font-size: 14px; color: #3f4444eb;"><%= (item.posting_date).toDateString()%></p>
+          <h5 class="title-post"><%=item.title %></h5>
           <p class="text-post"><%= item.txt_content %></p>
         </div>
         <div class="button-content">
@@ -31,7 +31,7 @@
           <button onclick="deletePost(`<%= item.id %>`)" class="button-change" style="top: 5px;"><i class="fa-solid fa-trash"></i></button>
           <!--</form>-->
           <form action="/edit/<%= item.id %>" method="POST">
-            <button class="button-change" style="top:45px;"><i class="fa-solid fa-pen"></i></button>
+            <button class="button-change" style="top:38px;"><i class="fa-solid fa-pen"></i></button>
           </form> 
         </div>
       </div>    

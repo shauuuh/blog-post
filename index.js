@@ -38,14 +38,7 @@ app.post("/submit", async(req,res) => {
     const result = await axios.get(API_URL, {responseType: 'stream'});
     const title = req.body["title-post"];
     const text = req.body["post-text"];
-    //const image = result.data.responseUrl;
-    /*
-    const newItem = {
-      id : items.length + 1,
-      title : req.body["title-post"],
-      text : req.body["post-text"],
-      image : result.data.responseUrl,
-    };*/
+
     await db.query("INSERT INTO posts (title,txt_content,url_image) VALUES ($1,$2,$3)",[title,text,result.data.responseUrl]);
     //items.push(newItem);
     res.redirect('/');
@@ -57,28 +50,28 @@ app.post("/submit", async(req,res) => {
 
 app.post("/edit/:id", async(req,res)=>{
   const id = parseInt(req.params.id);
-  const item = items.findIndex(item => item.id === id);
   const response = await db.query("SELECT * FROM posts WHERE id = $1",[id]);
+
   const data = {
-    id_item : response.id,
-    title : response.title,
-    text : response.txt_content,
+    id_item : response.rows[0].id,
+    title : response.rows[0].title,
+    text : response.rows[0].txt_content,
   }  
   res.render('edit.ejs',data)
 });
 
-app.post("/update/:id",(req,res)=>{
+app.post("/update/:id",async(req,res)=>{
   const id = parseInt(req.params.id);
-  const item = items.find(item => item.id === id);
-  item.text = req.body["post-text"];
-  item.title = req.body["title-post"];
+  const text = req.body["post-text"];
+  const title = req.body["title-post"];
+
+  await db.query("UPDATE posts SET title = $1, txt_content = $2 WHERE id = $3",[title,text,id]);
   res.redirect('/');
 });
 
-app.post("/delete/:id",(req,res)=>{
+app.post("/delete/:id", async(req,res)=>{
   const id = parseInt(req.params.id);
-  items = items.filter(item => item.id !== id);
-  console.log(items);
+  await db.query("DELETE FROM posts WHERE id = $1",[id]);
   res.redirect('/');
 });
 
