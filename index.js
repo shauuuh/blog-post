@@ -75,6 +75,12 @@ app.post("/delete/:id", async(req,res)=>{
   res.redirect('/');
 });
 
+app.get("/details/:id", async(req,res)=>{
+  const id = parseInt(req.params.id);
+  const response = await db.query("SELECT * FROM posts WHERE id = $1",[id]);
+  res.render("details.ejs", {content : response.rows[0]});
+});
+
 app.listen(port, ()=>{
   console.log(`Listening on port ${port}` );
 });

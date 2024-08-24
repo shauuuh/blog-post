@@ -19,7 +19,7 @@
   </div>
   <div class="posts-content">
     <% items.forEach(item => { %>    
-      <div class="container-content" id="item-<%=item.id%>">
+      <div class="container-content" id="item-<%=item.id%>" onclick="pageDetails('<%= item.id %>')">
         <div class="blog-content">
           <img src="<%=item.url_image%>" style="width: 100%; height: 130px; border-radius: 10px 10px 3px 3px;">
           <p style="margin: 10px 7px 0; font-size: 14px; color: #3f4444eb;"><%= (item.posting_date).toDateString()%></p>

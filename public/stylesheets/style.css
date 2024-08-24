@@ -183,6 +183,13 @@ header {
 }
 
 
+/* DETAILS */
 
-
+.view-blog {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px
+}
 
