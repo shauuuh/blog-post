@@ -193,3 +193,12 @@ header {
   padding: 20px
 }
 
+.image-blog {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+
+.text-blog {
+  width: 80%;
+}
